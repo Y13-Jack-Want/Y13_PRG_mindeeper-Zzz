@@ -60,19 +60,23 @@ root = Tk()
 root.title("Bomb wiper")
 root.geometry('{}x{}+{}+{}'.format(window_cfg["width"],window_cfg["height"],window_cfg["x-shift"],window_cfg["y-shift"]))
 
+# layout all of the main containers
+root.grid_columnconfigure(0, weight=2)
+root.grid_columnconfigure(1, weight=1)
+
 #mainFrame time :3
 left = Frame(root, bg='gray', width=600, height=650)
 right = Frame(root, bg='pink', width=300, height=650)
 
 #mainFrame layout
 left.grid(row=0, column=0, sticky="nsew")
-right.grid(row=0, column=1, sticky="nsew")
+right.grid(row=0, column=1, sticky="ns")
 
 #left subframe setup
 header = Frame(left, bg='#E6E6FA', width=600, height=50)
 game = Frame(left, bg='#013220', width=30*square["width"], height=30*square["height"])
 
-#90EE90
+#90EE90 : colour for later :3
 
 #left subframe layout
 header.grid(row=0, column=0, sticky="ew")
