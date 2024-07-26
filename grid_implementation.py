@@ -92,15 +92,31 @@ def grid_setup():
     print(y_amnt)
     x = 0
     y = 0
-    temp_dict= {}
+    grid_dict= {}
+    grid_keys= []
     for a in range(y_amnt):
         for i in range(x_amnt):
-            temp = str(x)+str(y)
-            temp_dict[temp] = False
+            temp = str(x)+","+str(y)
+            grid_keys.append(temp)
+            grid_dict[temp] = False
             x+=1
         x=0
         y+=1
-    print(temp_dict)
+    print(grid_dict)
+    print(grid_keys)
+    return(grid_dict,grid_keys)
+grid_values = grid_setup()
+grid_dict = grid_values[0]
+grid_keys = grid_values[1]
+
+#def make_button():
+
+
+#def grid_button():
+
+def temporaria():
+    print(":3")
+
 
 #90EE90 : colour for later :3
 
@@ -108,6 +124,4 @@ def grid_setup():
 header.grid(row=0, column=0, sticky="nsew")
 game.grid(row=1, column=0, sticky="nsew")
 
-
-grid_setup()
 root.mainloop()
